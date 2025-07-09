@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Khushal Kumar | Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <div class="logo">Khushal's Portfolio</div>
+          <ul class="nav-links" id="navMenu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+          <div class="nav-right">
+            <button class="dark-mode-toggle" id="themeToggleBtn" title="Toggle Dark Mode">
+              🌙
+            </button>
+            <div class="hamburger" id="navToggle">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Home Section -->
+      <section id="home" class="home-card">
+        <div class="home-content">
+          <img src="images/khushal.jpg" alt="Khushal Kumar" />
+          <div class="home-text">
+            <h1>Hi, I'm <span class="accent-text">Khushal Kumar</span></h1>
+            <p class="hero-tagline">Web Developer • Python Developer • Software Developer</p>
+            <p>
+              BTech CSE student at CUH. Passionate about coding, development,
+              and innovation.
+            </p>
+            <div class="btn-group">
+              <a href="#projects" class="btn">🚀 View Projects</a>
+              <a
+                href="resume.pdf"
+                class="btn resume-btn"
+                id="resumeDownloadBtn"
+                download
+                >📄 Download Resume</a
+              >
+              <span id="resumeStatus" class="resume-status"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about" class="card about">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <p>🚀 Aspiring Python Developer | B.Tech CSE at Central University of Haryana </p><br>
+            <p>I’m passionate about solving real-world problems using code. Through internships and personal learning, I’ve gained practical experience in Python development (Core, Flask, Generative AI), responsive web design, and ERP systems. </p><br>
+            <p><strong>🧠 Certifications: </strong><br>
+                - Python with Generative AI – Udemy <br>
+                - Responsive Web Design – freeCodeCamp (300+ hours) </p><br>
+                <p><strong>💼 Internships: </strong><br>
+                - Python Developer Intern at InternPE <br>
+                - ERP & Networking Intern at Egel Software Services </p><br>
+                <p>🎯 My goal is to become a full-stack developer who builds scalable, maintainable applications that impact lives. </p><br>
+            <p>💬 Let’s connect if you're into tech, collaboration, or innovative problem-solving. </p><br>
+        </div>
+      </section>
+
+      <!-- Experience Section-->
+       <section id="experience" class="card about">
+  <h2>Experience</h2>
+
+  <div class="experience-container">
+    <div class="experience-card">
+      <h3>Python developer Intern</h3>
+      <p><strong>Company:</strong> InternPE</p>
+      <p><strong>Duration:</strong> July 2025 – Aug 2025</p>
+      <p>Selected for a 6-week remote internship focused on core Python programming. <br>
+<br>
+🔹 Strengthened my understanding of Python fundamentals including functions, loops, conditionals, and OOP <br>
+🔹 Worked on small-scale Python scripts and logic-building exercises <br>
+🔹 Improved code readability, debugging, and writing efficient solutions <br>
+🔹 Gained exposure to real-world problem-solving through structured tasks and project-based assignments <br>
+🔹 Learned to work independently and manage time effectively in a remote internship setup <br>
+<br>
+This internship helped sharpen my programming logic and set the groundwork for future learning in backend development and automation. <br>
+</p>
+<p><strong>Skills:</strong><br>
+🔹Python Programming <br>
+🔹Object-Oriented Programming<br>
+🔹Debugging <br>
+🔹Problem Solving <br>
+🔹Flask <br></p>
+<a href="certificates/Python Programming.pdf" target="_blank" class="certificate-link">
+    <img src="certificates/web-dev-internship-thumb.jpg" alt="Internship Certificate" class="certificate-thumbnail">
+</a>
+    </div>
+
+    <div class="experience-card">
+      <h3>ERP and Networking Intern</h3>
+      <p><strong>Company:</strong> Egel Software Services</p>
+      <p><strong>Duration:</strong> Jun 2025 – Jun 2025</p>
+      <p>Completed a 1-month industrial internship at Egel Software Services with a focus on ERP systems and networking fundamentals. <br>
+<br>
+🔹 Gained insight into how enterprise-level resource planning (ERP) systems function and integrate across departments <br>
+🔹 Understood database-driven ERP modules and user roles in a business workflow <br>
+🔹 Learned basic networking concepts including IP addressing, configuration, and network security <br>
+🔹 Assisted in troubleshooting mock network setups and understanding real-time system logs <br>
+🔹 Applied classroom knowledge to real industry tasks in a guided environment <br>
+ <br>
+This internship helped me bridge the gap between theory and practice, and exposed me to real-world IT infrastructure used in business operations. <br>
+</p>
+<p><strong>Skills:</strong><br>
+🔹Enterprise Resource Planning (ERP) <br>
+🔹System Administration<br>
+🔹Team Communication<br>
+🔹Computer Networking<br>
+🔹Troubleshooting<br></p>
+<a href="certificates/ERP and Networking.pdf" target="_blank" class="certificate-link">
+    <img src="certificates/ERP and Networking-thumb.jpg" alt="Internship Certificate" class="certificate-thumbnail">
+</a>
+    </div>
+  </div>
+</section>
+
+
+      <!-- Skills Section -->
+      <section id="skills" class="card skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+          <!-- Technical -->
+          <div class="skills-category">
+            <h3>Technical Skills</h3> <br>
+
+            <div class="skill">
+              <p>Python</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="80%"><span>80%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Generative AI</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="40%"><span>40%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>C/C++</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="70%"><span>70%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Java</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="40%"><span>40%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>SQL</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="70%"><span>70%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>HTML</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="90%"><span>90%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>CSS</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="85%"><span>85%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Responsive Web Design</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="75%"><span>75%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Computer Networking</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="70%"><span>70%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>ERP Systems</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="60%"><span>60%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Git/GitHub</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="60%"><span>60%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Object Oriented Programming (OOPs)</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="60%"><span>60%</span></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Professional -->
+          <div class="skills-category">
+            <h3>Professional Skills</h3> <br>
+            <div class="skill">
+              <p>Creativity</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="90%"><span>90%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Problem Solving</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="85%"><span>85%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Techinical Communication</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="75%"><span>75%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Teamwork</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="80%"><span>80%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Event Coordination</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="70%"><span>70%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Public Speaking</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="60%"><span>60%</span></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <p>Leadership</p>
+              <div class="progress-bar">
+                <div class="progress" data-width="70%"><span>70%</span></div>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section id="projects" class="card projects">
+        <h2>Projects</h2>
+        <div class="project-container">
+          <!-- Calculator Project -->
+          <div class="project-card">
+            <img src="images/calculator.jpg" alt="Calculator Project" />
+            <h3>🧮 Basic Calculator – "Crunch Numbers with Style"</h3>
+            <p>A clean, responsive calculator that handles everyday arithmetic with ease. Built using HTML, CSS, and JavaScript, it’s a sleek showcase of interactive UI and real-time logic.</p>
+            <button
+              class="view-more-btn btn"
+              onclick="openModal('modal-calculator')"
+            >
+              View More
+            </button>
+          </div>
+          <!-- Snake Game -->
+          <div class="project-card">
+            <img src="images/Snake.png" alt="Snake Game" />
+            <h3>🐍 Snake Game – "Retro Fun, Reimagined in Code"</h3>
+            <p>Relive the classic arcade experience! This browser-based Snake game features smooth controls, dynamic growth, and collision logic—all crafted from scratch with web technologies.</p>
+            <button
+              class="view-more-btn btn"
+              onclick="openModal('modal-snake')">
+              View More
+            </button>
+          </div>
+          <!-- Puzzle Game -->
+          <div class="project-card">
+            <img src="images/Puzzle.png" alt="Puzzle Game" />
+            <h3>🧩 3x3 Puzzle Game – "Slide, Solve, and Outsmart Yourself"</h3>
+            <p>A brain-teasing tile puzzle that tracks your every move. Shuffle, slide, and solve the grid in as few steps as possible—built to challenge and entertain with pure JavaScript logic.</p>
+            <button
+              class="view-more-btn btn"
+              onclick="openModal('modal-puzzle')">
+              View More
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Modals -->
+      <div id="modal-calculator" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeModal('modal-calculator')">&times;</span>
+          <h2>Calculator Project</h2>
+          <p>
+            <strong>🧮 Basic Calculator Web App</strong>
+<br>A sleek and responsive calculator built using HTML, CSS, and JavaScript. This project demonstrates my foundational front-end development skills by combining clean UI design with interactive functionality.
+<br><strong>🔧 Features:</strong>
+<br>- Perform basic arithmetic operations: addition, subtraction, multiplication, and division
+<br>- Real-time input handling and result display
+<br>- Clear and reset functionality
+<br>- Responsive layout for desktop and mobile devices
+<br><br><strong>💡 Technologies Used:</strong>
+<br>- HTML5 for semantic structure
+<br>- CSS3 for styling and responsive design
+<br>- Vanilla JavaScript for dynamic behavior and user interaction
+<br><br><strong>🎯 Purpose:</strong>
+<br>This project was created to strengthen my understanding of DOM manipulation, event handling, and UI/UX principles. It serves as a foundational step toward building more complex web applications.
+</p>
+              <br><strong>GitHub:</strong>
+              <a href="https://github.com/Khushal-Kumar/Calculator" target="_blank"> <br>View Repo</a>
+        </div>
+      </div>
+      <div id="modal-snake" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeModal('modal-hotel')"
+            >&times;</span
+          >
+          <h2>Snake Game</h2>
+          <p>
+            <strong>🐍 Classic Snake Game</strong>
+<br>A modern take on the nostalgic Snake game, built entirely with HTML, CSS, and JavaScript. This interactive browser-based game showcases my ability to create engaging user experiences using core web technologies.
+<br><strong>🎮 Features:</strong>
+<br>- Smooth snake movement controlled by arrow keys
+<br>- Apple spawning at random positions
+<br>- Snake grows with each apple eaten
+<br>- Game-over detection on wall or self-collision
+<br>- Score tracking and restart functionality
+<br><br><strong>🛠️ Technologies Used:</strong>
+<br>- HTML5 for canvas-based game rendering
+<br>- CSS3 for layout and visual styling
+<br>- Vanilla JavaScript for game logic, animation, and input handling
+<br><br><strong>🎯 Purpose:</strong>
+<br>This project was developed to deepen my understanding of game loops, collision detection, and real-time rendering using the HTML5 element. It also helped sharpen my skills in logic structuring and responsive keyboard input handling.
+</p>
+              <br><strong>GitHub:</strong> <a href="https://github.com/Khushal-Kumar/Snake-Game" target="_blank"> <br>View Repo</a>
+        </div>
+      </div>
+      <div id="modal-puzzle" class="modal">
+        <div class="modal-content">
+          <span class="close-btn" onclick="closeModal('modal-calculator')">&times;</span>
+          <h2>3x3 Puzzle Game</h2>
+          <p>
+            <strong>🧩 3x3 Sliding Puzzle Game</strong>
+<br>A classic 3x3 tile puzzle game built using HTML, CSS, and JavaScript. This project challenges players to rearrange shuffled tiles into the correct order, testing both logic and patience—while tracking every move.
+<br><strong>🎯 Features:</strong>
+<br>- Interactive 3x3 grid with draggable or clickable tiles
+<br>- Randomized puzzle generation on each game start
+<br>- Move counter to track player performance
+<br>- Win detection with a success message
+<br>- Clean, responsive design for desktop and mobile play
+<br><br><strong>🛠️ Technologies Used:</strong>
+<br>- HTML5 for semantic structure and layout
+<br>- CSS3 for styling and responsive design
+<br>- Vanilla JavaScript for game logic, tile movement, and state tracking
+<br><br><strong>💡 Purpose:</strong>
+<br>This project was created to explore algorithmic thinking, DOM manipulation, and user interaction. It helped me practice array-based logic, event handling, and dynamic UI updates—all essential skills for front-end development.
+</p>
+              <br><strong>GitHub:</strong>
+              <a href="https://github.com/Khushal-Kumar/Puzzle-Game" target="_blank">View Repo</a>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <section id="contact" class="card section">
+        <h2>Contacts</h2>
+        <p>
+          <section id="contact" style="padding: 40px;">
+  <div style="max-width: 1200px; margin: auto; display: flex; flex-wrap: wrap; gap: 40px;">
+
+    <!-- Left: Contact Info -->
+    <div style="flex: 1; min-width: 300px;">
+      <p><strong>Email:</strong> khushalkumarsk@gmail.com</p>
+      <p><strong>Phone:</strong> +91 740913 8501</p>
+      <p><strong>Address:</strong> H.no. 1690 Mainagarh Near KrishnaPuri, Mathura(281001), U.P, India</p>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div style="flex: 1; min-width: 300px;">
+      <form action="https://formspree.io/f/your-form-id" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+        <input type="text" name="name" placeholder="Your Name" required style="padding: 10px; font-size: 16px;">
+        <input type="email" name="email" placeholder="Your Email" required style="padding: 10px; font-size: 16px;">
+        <textarea name="message" rows="5" placeholder="Your Message" required style="padding: 10px; font-size: 16px;"></textarea>
+        <button type="submit" style="padding: 10px 20px; font-size: 16px; background-color: #333; color: #fff; border: none; cursor: pointer;">Send</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; <span id="year">2025</span> Khushal Kumar. All rights reserved.
+      </p> <br>
+      <a href="https://www.linkedin.com/in/khushal-kumar-075b062ab/" target="_blank" style="margin: 0 10px;">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" width="30" height="30">
+  </a>
+  <a href="https://www.instagram.com/cyb3r.khush4l" target="_blank" style="margin: 0 10px;">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram" width="30" height="30">
+  </a>
+  <a href="https://www.facebook.com/khushal.kumar.454661" target="_blank" style="margin: 0 10px;">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook" width="30" height="30">
+  </a>
+  <a href="https://wa.me/+917409138501" target="_blank" style="margin: 0 10px;">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp" width="30" height="30">
+  </a>
+    </footer>
+  </body>
+</html>
