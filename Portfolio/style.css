@@ -1,8 +1,15 @@
-/* CSS Reset & Variables */
+/* =========================================
+   1. CSS Reset & Variables
+   ========================================= */
 :root {
   --accent-blue: #00cfff;
   --accent-violet: #a259ff;
   --accent-rose: #ff4f81;
+  --bg-color: #f4f6f8;
+  --text-color: #2c2c2c;
+  --card-bg: white;
+  --input-bg: #fff;
+  --input-border: #ddd;
 }
 
 * {
@@ -13,15 +20,17 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.6;
-  background: #f4f6f8;
-  color: #2c2c2c;
+  background: var(--bg-color);
+  color: var(--text-color);
   padding-top: 70px;
   transition: background 0.4s, color 0.4s;
 }
 
-/* Links */
+/* =========================================
+   2. Global Styles (Links, Buttons)
+   ========================================= */
 a {
   text-decoration: none;
   color: var(--accent-blue);
@@ -31,37 +40,56 @@ a:hover {
   color: #004080;
 }
 
-/* Buttons */
 .btn {
   display: inline-block;
   padding: 10px 22px;
+  border: none;
+  cursor: pointer;
   border-radius: 25px;
   background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
   color: white;
   font-weight: 500;
-  box-shadow: 0 0 10px var(--accent-violet);
+  box-shadow: 0 0 10px rgba(162, 89, 255, 0.4);
   transition: all 0.3s ease;
 }
 .btn:hover {
   background: linear-gradient(135deg, var(--accent-rose), var(--accent-violet));
-  box-shadow: 0 0 20px var(--accent-rose);
+  box-shadow: 0 0 20px rgba(255, 79, 129, 0.6);
+  transform: translateY(-2px);
 }
+
+.btn.secondary {
+  background: transparent;
+  border: 2px solid var(--accent-blue);
+  color: var(--accent-blue);
+  box-shadow: none;
+}
+.btn.secondary:hover {
+  background: var(--accent-blue);
+  color: white;
+}
+
 .resume-btn {
   background: #28a745;
+  box-shadow: 0 0 10px rgba(40, 167, 69, 0.4);
 }
 .resume-btn:hover {
   background: #1e7e34;
 }
 
-/* Navbar */
+/* =========================================
+   3. Navbar
+   ========================================= */
 header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: white;
+  background: var(--card-bg);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   z-index: 999;
+  transition: background 0.4s;
 }
+
 .navbar-container {
   max-width: 1100px;
   margin: auto;
@@ -70,23 +98,34 @@ header {
   align-items: center;
   padding: 15px 20px;
 }
+
 .logo {
   font-size: 24px;
   font-weight: 600;
   color: var(--accent-blue);
 }
+
 .nav-links {
   list-style: none;
   display: flex;
   gap: 20px;
 }
+
 .nav-links li a {
   font-weight: 500;
-  color: #333;
+  color: var(--text-color);
 }
-.nav-links li a:hover {
+.nav-links li a:hover,
+.nav-links li a.active {
   color: var(--accent-blue);
 }
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
 .dark-mode-toggle {
   background: none;
   border: none;
@@ -94,7 +133,7 @@ header {
   cursor: pointer;
 }
 
-/* Hamburger */
+/* Hamburger Menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -103,12 +142,13 @@ header {
 .hamburger span {
   height: 3px;
   width: 25px;
-  background: #0077cc;
+  background: var(--accent-blue);
   margin: 4px 0;
   border-radius: 2px;
   transition: 0.3s;
 }
 
+/* Mobile Nav */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -117,26 +157,30 @@ header {
     display: none;
     flex-direction: column;
     gap: 10px;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(255, 255, 255, 0.95);
     padding: 20px;
     position: absolute;
     top: 60px;
     right: 20px;
     border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
   }
-  .nav-links.show {
+  .dark-mode .nav-links {
+    background: rgba(30, 30, 30, 0.95);
+  }
+  .nav-links.open {
     display: flex;
-  }
-  .navbar-container {
-    flex-direction: column;
   }
 }
 
-/* Sections */
+/* =========================================
+   4. Sections & Cards
+   ========================================= */
 section.card {
-  background: white;
+  background: var(--card-bg);
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   padding: 40px 30px;
   margin: 40px auto;
   max-width: 1000px;
@@ -147,11 +191,10 @@ h2 {
   text-align: center;
   margin-bottom: 30px;
   font-size: 28px;
-  color: #0077cc;
+  color: var(--accent-blue);
 }
-
 h3 {
-  color: #444;
+  color: var(--text-color);
 }
 
 /* Hero Section */
@@ -162,6 +205,7 @@ h3 {
   gap: 50px;
   flex-wrap: wrap;
   text-align: center;
+  margin-top: 40px;
 }
 .home-card img {
   width: 300px;
@@ -177,6 +221,12 @@ h3 {
 .accent-text {
   color: var(--accent-blue);
 }
+.hero-tagline {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+  color: var(--accent-violet);
+}
 .btn-group {
   margin-top: 20px;
   display: flex;
@@ -185,33 +235,9 @@ h3 {
   justify-content: center;
 }
 
-/* Typing Text */
-#typed-text {
-  font-weight: 600;
-  color: var(--accent-violet);
-}
-.cursor {
-  display: inline-block;
-  width: 1ch;
-  background-color: var(--accent-violet);
-  animation: blink 0.7s steps(1) infinite;
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/*Experience */
-#experience {
-  padding: 40px;
-}
-
-#experience h2 {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 30px;
-}
-
+/* =========================================
+   5. Experience Section
+   ========================================= */
 .experience-container {
   display: flex;
   flex-wrap: wrap;
@@ -221,198 +247,328 @@ h3 {
 
 .experience-card {
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 320px;
+  border: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 25px;
+  width: 100%;
+  max-width: 450px;
   transition: transform 0.3s;
+  background: var(--card-bg);
 }
-
 .experience-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
-
 .experience-card h3 {
   font-size: 20px;
-  margin-bottom: 10px;
-  color: #333;
+  margin-bottom: 5px;
+  color: var(--accent-violet);
 }
-
 .experience-card p {
   font-size: 14px;
-  color: #555;
+  color: var(--text-color);
   margin-bottom: 8px;
 }
-
 .certificate-link {
   display: inline-block;
-  margin-top: 12px;
-  padding: 8px 14px;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 14px;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.3s ease;
+  margin-top: 15px;
 }
-
-.certificate-link:hover {
-  background-color: #0056b3;
-}
-
 .certificate-thumbnail {
   width: 100%;
-  margin-top: 15px;
   border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
 }
-
 .certificate-thumbnail:hover {
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
-/* Skills */
+/* =========================================
+   6. Skills Section
+   ========================================= */
 .skills-container {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 30px;
 }
-
 .skills-category {
   flex: 1;
   min-width: 300px;
 }
-
+.skill {
+  margin-bottom: 15px;
+}
 .skill p {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 15px;
 }
-
 .progress-bar {
   background-color: #ddd;
   border-radius: 20px;
   overflow: hidden;
-  height: 25px;
-  position: relative;
+  height: 22px;
+  width: 100%;
 }
-
 .progress {
   height: 100%;
-  background: #4caf50;
-  position: relative;
+  background: linear-gradient(90deg, var(--accent-blue), var(--accent-violet));
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding-right: 10px;
   color: white;
   font-weight: bold;
-  font-size: 14px;
-  border-radius: 20px 0 0 20px;
-  transition: width 0.5s ease-in-out;
+  font-size: 12px;
+  border-radius: 20px;
+  width: 0; /* Animated by JS */
+  transition: width 1s ease-in-out;
 }
 
-/* Projects */
+/* =========================================
+   7. Projects Section
+   ========================================= */
 .project-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
 }
-
 .project-card {
   width: 300px;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  background: var(--card-bg);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: transform 0.3s;
   text-align: center;
+  padding-bottom: 20px;
 }
-
 .project-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
 }
-
 .project-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.project-card h3 {
+  padding: 15px 10px 5px;
+  font-size: 1.1rem;
+}
+.project-card p {
+  padding: 0 15px 15px;
+  font-size: 0.9rem;
+  color: #666;
+}
+.dark-mode .project-card p {
+  color: #bbb;
 }
 
-/* Modal */
+/* =========================================
+   8. Modals
+   ========================================= */
 .modal {
   display: none;
   position: fixed;
   z-index: 9999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.7);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-y: auto; /* Allow scrolling on small screens */
 }
 
 .modal-content {
-  background: white;
+  background: var(--card-bg);
   margin: 5% auto;
-  padding: 20px;
+  padding: 30px;
   border-radius: 12px;
-  max-width: 600px;
+  max-width: 650px;
+  width: 90%;
+  position: relative;
   animation: fadeIn 0.4s;
 }
 
 .close-btn {
-  float: right;
-  font-size: 26px;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
   cursor: pointer;
   color: #888;
+  transition: 0.2s;
 }
 .close-btn:hover {
-  color: black;
+  color: var(--accent-rose);
 }
 
-/* Resume Feedback */
+.modal-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 10px 0 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.modal-section {
+  margin-bottom: 20px;
+}
+.modal-section h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--accent-blue);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding-bottom: 5px;
+}
+
+/* Tech Tags (Pills) */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.tech-tag {
+  display: inline-block;
+  background: #eff6ff;
+  color: #1e3a8a;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid #bfdbfe;
+}
+.dark-mode .tech-tag {
+  background: #1e3a8a;
+  color: #eff6ff;
+  border-color: #3b82f6;
+}
+
+.modal-links {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================================
+   9. Optimized Contact Section
+   ========================================= */
+.contact-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 10px;
+}
+
+.contact-info, .contact-form-container {
+  flex: 1;
+  min-width: 300px; /* Stacks on mobile */
+}
+
+.contact-info p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#contactForm input, 
+#contactForm textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text-color);
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+}
+
+#contactForm input:focus, 
+#contactForm textarea:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(0, 207, 255, 0.1);
+  outline: none;
+}
+
+/* Form Status Messages */
+.form-status {
+  font-size: 0.95rem;
+  margin-top: 10px;
+  font-weight: 600;
+  min-height: 24px;
+}
+.status-success { color: #28a745; }
+.status-error { color: #dc3545; }
+
+/* Resume Feedback Status */
 .resume-status {
   display: block;
   margin-top: 8px;
   color: var(--accent-rose);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  height: 20px;
 }
 
-/* Dark Mode */
+/* =========================================
+   10. Dark Mode Overrides
+   ========================================= */
 .dark-mode {
-  background: #121212;
-  color: #e0e0e0;
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --card-bg: #1e1e1e;
+  --input-bg: #2a2a2a;
+  --input-border: #444;
 }
-.dark-mode .card,
-.dark-mode header,
-.dark-mode footer,
-.dark-mode .btn,
-.dark-mode .modal-content {
-  background: #1e1e1e;
-  color: #e0e0e0;
-  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
-}
-.dark-mode .progress {
-  background: var(--accent-blue);
+
+.dark-mode .progress-bar {
+  background-color: #333;
 }
 .dark-mode a {
   color: #4fc3f7;
 }
-
-/* AOS Animations */
-[data-aos] {
-  opacity: 0;
-  transition-property: opacity, transform;
+.dark-mode header {
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
 }
-[data-aos].aos-animate {
-  opacity: 1;
+.dark-mode .hamburger span {
+  background: #fff;
 }
 
-/* Footer */
+/* =========================================
+   11. Footer
+   ========================================= */
 footer {
   text-align: center;
-  padding: 20px;
-  background: var(--accent-blue);
+  padding: 30px;
+  background: #001f3f; /* Deep blue footer */
   color: white;
-  margin-top: 40px;
+  margin-top: 50px;
+}
+footer a {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+footer a:hover {
+  transform: scale(1.1);
 }
