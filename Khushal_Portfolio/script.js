@@ -279,7 +279,96 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    contactForm.addEventListener('submit', (e) => {
+    /* ==========================================================================
+       CONTACT FORM ENHANCEMENTS & API SUBMISSIONS
+       ========================================================================== */
+    const textarea = document.getElementById('form-message');
+    const charCounter = document.getElementById('message-char-counter');
+    const templatePills = document.querySelectorAll('.template-pill');
+    const formSubject = document.getElementById('form-subject');
+    const formMessage = document.getElementById('form-message');
+
+    // 1. Toast Notification Helper
+    const showToast = (message, type = 'info') => {
+        const toastContainer = document.getElementById('toast-container');
+        const toast = document.createElement('div');
+        toast.className = `toast-notification ${type}`;
+        
+        let iconHtml = '<i class="fa-solid fa-circle-info"></i>';
+        if (type === 'success') iconHtml = '<i class="fa-solid fa-circle-check"></i>';
+        if (type === 'error') iconHtml = '<i class="fa-solid fa-triangle-exclamation"></i>';
+        
+        toast.innerHTML = `<span class="toast-icon ${type}">${iconHtml}</span> <span>${message}</span>`;
+        toastContainer.appendChild(toast);
+        
+        // Trigger active slide-in
+        setTimeout(() => toast.classList.add('active'), 50);
+        
+        // Remove after 4s
+        setTimeout(() => {
+            toast.classList.remove('active');
+            setTimeout(() => toast.remove(), 400);
+        }, 4000);
+    };
+
+    // 2. Character Counter
+    textarea.addEventListener('input', () => {
+        const remaining = textarea.value.length;
+        charCounter.textContent = `${remaining} / 1000`;
+        
+        if (remaining >= 900) {
+            charCounter.className = 'char-counter error';
+        } else if (remaining >= 750) {
+            charCounter.className = 'char-counter warning';
+        } else {
+            charCounter.className = 'char-counter';
+        }
+    });
+
+    // 3. Quick Templates
+    const templates = {
+        collab: {
+            subject: 'Collaboration Opportunity - [Your Project Name]',
+            body: 'Hi Khushal,\n\nI was looking through your portfolio and saw your projects. I\'d love to collaborate on a new project relating to [insert topic]. Let me know if you are interested!\n\nBest regards,\n[Your Name]'
+        },
+        internship: {
+            subject: 'Internship / Job Inquiry - [Company Name]',
+            body: 'Dear Khushal,\n\nI am writing to inquire about your availability for Data Science / Python Developer roles. We are impressed by your work as a Google Gemini Student Ambassador.\n\nSincerely,\n[Your Name]'
+        },
+        hello: {
+            subject: 'Just wanted to say Hello!',
+            body: 'Hi Khushal,\n\nJust visiting your portfolio and wanted to reach out to say hello! Your projects look fantastic.\n\nCheers,\n[Your Name]'
+        }
+    };
+
+    templatePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+            const templateKey = pill.getAttribute('data-template');
+            const template = templates[templateKey];
+            
+            if (template) {
+                // Toggle active pill state
+                templatePills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                
+                // Set form values
+                formSubject.value = template.subject;
+                formMessage.value = template.body;
+                
+                // Trigger event to float labels correctly
+                formSubject.setAttribute('placeholder', ' ');
+                formMessage.setAttribute('placeholder', ' ');
+                
+                // Update character counter
+                textarea.dispatchEvent(new Event('input'));
+                
+                showToast(`Loaded ${pill.textContent.trim()} Template`, 'info');
+            }
+        });
+    });
+
+    // 4. Form Submissions Logic (POSTs to backend /api/contact)
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const name = document.getElementById('form-name').value.trim();
@@ -287,9 +376,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const subject = document.getElementById('form-subject').value.trim();
         const message = document.getElementById('form-message').value.trim();
 
-        // Simple validation check
         if (!name || !email || !subject || !message) {
-            showFeedback('Please fill out all fields.', 'error');
+            showToast('Please fill out all fields.', 'error');
             return;
         }
 
@@ -297,36 +385,113 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.disabled = true;
         const origBtnHtml = submitBtn.innerHTML;
         submitBtn.innerHTML = `<span>Sending Message...</span> <i class="fa-solid fa-circle-notch fa-spin"></i>`;
-        feedbackMsg.textContent = '';
-        feedbackMsg.className = 'form-feedback';
+        
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    subject,
+                    message
+                })
+            });
 
-        // Simulate sending animation (1.5s)
-        setTimeout(() => {
-            // Open local mail client
-            const mailtoUrl = `mailto:khushalkumarsk@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " <" + email + ">\n\n" + message)}`;
-            window.location.href = mailtoUrl;
+            if (response.ok) {
+                showToast('Message sent and saved to database successfully!', 'success');
+                contactForm.reset();
+                charCounter.textContent = '0 / 1000';
+                templatePills.forEach(p => p.classList.remove('active'));
+            } else {
+                throw new Error('Backend database submission failed.');
+            }
+        } catch (err) {
+            console.error(err);
+            showToast('Failed to connect to backend server. Falling back to email client...', 'error');
+            
+            // Staggered fallback trigger
+            setTimeout(() => {
+                triggerMailto(name, email, subject, message);
+            }, 1000);
+        }
 
-            // Display success
-            showFeedback('Redirecting to mail client to send message...', 'success');
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Restore button
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = origBtnHtml;
-        }, 1500);
+        // Restore button state
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = origBtnHtml;
     });
 
-    const showFeedback = (text, type) => {
-        feedbackMsg.textContent = text;
-        feedbackMsg.className = `form-feedback ${type}`;
-        
-        // Hide after 5 seconds
-        setTimeout(() => {
-            feedbackMsg.textContent = '';
-            feedbackMsg.className = 'form-feedback';
-        }, 5000);
+    const triggerMailto = (name, email, subject, message) => {
+        const mailtoUrl = `mailto:khushalkumarsk@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent("From: " + name + " <" + email + ">\n\n" + message)}`;
+        window.location.href = mailtoUrl;
+        showToast('Opening default email client...', 'success');
+        contactForm.reset();
+        charCounter.textContent = '0 / 1000';
+        templatePills.forEach(p => p.classList.remove('active'));
     };
+
+    // 5. Click-to-copy details toaster
+    const emailLink = document.querySelector('#info-row-email .info-value');
+    const phoneLink = document.querySelector('#info-row-phone .info-value');
+
+    if (emailLink) {
+        emailLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigator.clipboard.writeText(emailLink.textContent.trim()).then(() => {
+                showToast('Email copied to clipboard!', 'success');
+            });
+        });
+    }
+
+    if (phoneLink) {
+        phoneLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            navigator.clipboard.writeText(phoneLink.textContent.trim().replace(/\s+/g, '')).then(() => {
+                showToast('Phone number copied to clipboard!', 'success');
+            });
+        });
+    }
+
+    // Deprecated but mapped for safety
+    const showFeedback = (text, type) => {
+        showToast(text, type === 'success' ? 'success' : 'error');
+    };
+
+    /* ==========================================================================
+       CV & RESUME DROPDOWN DOWNLOADS
+       ========================================================================== */
+    const dropdowns = document.querySelectorAll('.dropdown');
+
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
+
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            // Close other dropdowns
+            dropdowns.forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('show');
+                    otherDropdown.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            const isOpen = dropdown.classList.contains('show');
+            dropdown.classList.toggle('show');
+            toggle.setAttribute('aria-expanded', !isOpen);
+        });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', () => {
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('show');
+            dropdown.querySelector('.dropdown-toggle').setAttribute('aria-expanded', 'false');
+        });
+    });
+
+
 
 });

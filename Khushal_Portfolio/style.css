@@ -268,7 +268,7 @@ ul {
     background-color: var(--bg-primary);
     display: flex;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
     padding-top: 80px;
 }
 
@@ -354,6 +354,8 @@ ul {
 }
 
 .landing-cta {
+    position: relative;
+    z-index: 15;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -2392,3 +2394,248 @@ ul {
         padding: 35px 25px;
     }
 }
+
+/* ==========================================================================
+   DROPDOWN MENU SYSTEM FOR RESUME/CV DOWNLOADS
+   ========================================================================== */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    z-index: 15;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 12px);
+    left: 50%;
+    transform: translateX(-50%) translateY(10px) scale(0.95);
+    min-width: 240px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(44, 34, 30, 0.12);
+    padding: 8px;
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition-bounce);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.dropdown.show .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    border-radius: 12px;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+
+.dropdown-item i {
+    color: var(--accent);
+    font-size: 1.1rem;
+    transition: var(--transition-smooth);
+    width: 16px;
+    text-align: center;
+}
+
+.dropdown-item:hover {
+    background-color: var(--bg-secondary);
+    color: var(--accent-hover);
+}
+
+.dropdown-item:hover i {
+    transform: scale(1.1);
+    color: var(--accent-hover);
+}
+
+.dropdown-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.dropdown.show .dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.about-cta {
+    position: relative;
+    z-index: 15;
+    margin: 10px 0 25px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: inline-block;
+}
+
+.about-section.active .about-cta {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+/* Adjustments for mobile view */
+@media (max-width: 480px) {
+    .dropdown {
+        width: 100%;
+    }
+    .dropdown-toggle {
+        width: 100%;
+    }
+    .dropdown-menu {
+        width: 100%;
+        min-width: unset;
+        left: 0;
+        transform: translateY(10px) scale(0.95);
+    }
+    .dropdown.show .dropdown-menu {
+        transform: translateY(0) scale(1);
+    }
+    .about-cta {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ==========================================================================
+   CONTACT FORM ENHANCEMENTS: TEMPLATES & CHAR COUNTER
+   ========================================================================== */
+.form-templates {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.template-label {
+    font-family: var(--font-title);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    display: block;
+    margin-bottom: 10px;
+}
+
+.template-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.template-pill {
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: var(--font-title);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.template-pill:hover, .template-pill.active {
+    border-color: var(--accent);
+    background-color: var(--bg-secondary);
+    color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.char-counter {
+    position: absolute;
+    bottom: -22px;
+    right: 5px;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.char-counter.warning {
+    color: #c97a22;
+}
+
+.char-counter.error {
+    color: #c93b22;
+}
+
+
+
+/* Toast Styler */
+.toast-notification-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast-notification {
+    background-color: var(--bg-dark);
+    color: var(--bg-primary);
+    border-left: 4px solid var(--accent);
+    border-radius: 8px;
+    padding: 14px 22px;
+    box-shadow: 0 10px 30px rgba(44, 34, 30, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-title);
+    font-weight: 500;
+    font-size: 0.9rem;
+    pointer-events: auto;
+    transform: translateX(120%);
+    opacity: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
+}
+
+.toast-notification.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.toast-notification.success {
+    border-left-color: #4caf50;
+}
+
+.toast-notification.error {
+    border-left-color: #f44336;
+}
+
+.toast-notification.info {
+    border-left-color: var(--accent);
+}
+
+.toast-icon {
+    font-size: 1.1rem;
+}
+
+.toast-icon.success i { color: #4caf50; }
+.toast-icon.error i { color: #f44336; }
+.toast-icon.info i { color: var(--accent); }

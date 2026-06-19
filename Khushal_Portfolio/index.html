@@ -63,6 +63,15 @@
                     </p>
                     <div class="landing-cta" id="landing-cta">
                         <a href="#about" class="btn btn-primary" id="btn-learn-more">Learn More About Me <i class="fa-solid fa-arrow-down"></i></a>
+                        <div class="dropdown" id="landing-cv-resume-dropdown">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" id="btn-download-menu" aria-haspopup="true" aria-expanded="false">
+                                Download CV / Resume <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btn-download-menu">
+                                <a href="resume.pdf" download="Khushal_Kumar_Resume.pdf" class="dropdown-item"><i class="fa-solid fa-file-pdf"></i> Download Resume</a>
+                                <a href="CV.pdf" download="Khushal_Kumar_CV.pdf" class="dropdown-item"><i class="fa-solid fa-file-invoice"></i> Download CV</a>
+                            </div>
+                        </div>
                         <a href="#contact" class="btn btn-secondary" id="btn-get-in-touch">Get In Touch <i class="fa-solid fa-paper-plane"></i></a>
                     </div>
                     <div class="landing-socials" id="landing-socials">
@@ -99,6 +108,18 @@
                         <p class="about-text" id="about-text">
                             I am currently in my third year of pursuing a B.Tech in Computer Science and Engineering at the Central University of Haryana. My expertise spans Python development, web application design, and exploratory data analysis, backed by the successful completion of eight independent projects. Throughout my academic and professional journey, including my role as a Google Gemini Student Ambassador and a Python Developer Intern at InternPe, I have honed my ability to build clean, functional code. I regularly leverage tools like VS Code, Git, and SQL, along with Python libraries such as Pandas and NumPy, to solve analytical challenges. What sets me apart is my logical reasoning, structured state management, and commitment to data accuracy in every project I undertake. I am actively seeking a data science or software development internship where I can apply my skills to real-world challenges.
                         </p>
+                        
+                        <div class="about-cta">
+                            <div class="dropdown" id="about-cv-resume-dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" id="btn-download-menu-about" aria-haspopup="true" aria-expanded="false">
+                                    Download CV / Resume <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="btn-download-menu-about">
+                                    <a href="resume.pdf" download="Khushal_Kumar_Resume.pdf" class="dropdown-item"><i class="fa-solid fa-file-pdf"></i> Download Resume</a>
+                                    <a href="CV.pdf" download="Khushal_Kumar_CV.pdf" class="dropdown-item"><i class="fa-solid fa-file-invoice"></i> Download CV</a>
+                                </div>
+                            </div>
+                        </div>
                         
                         <div class="mission-vision-cards">
                             <div class="mv-card flip-card" id="mission-card">
@@ -851,6 +872,14 @@
                 <div class="contact-grid">
                     <!-- Left: Form -->
                     <div class="contact-form-card reveal" id="contact-form-card">
+                        <div class="form-templates">
+                            <span class="template-label">Quick Templates:</span>
+                            <div class="template-pills">
+                                <button type="button" class="template-pill" data-template="collab"><i class="fa-solid fa-handshake"></i> Collaboration</button>
+                                <button type="button" class="template-pill" data-template="internship"><i class="fa-solid fa-briefcase"></i> Internship</button>
+                                <button type="button" class="template-pill" data-template="hello"><i class="fa-solid fa-comments"></i> Say Hello</button>
+                            </div>
+                        </div>
                         <form id="portfolio-contact-form" class="contact-form" action="#" method="POST">
                             <div class="form-group">
                                 <input type="text" id="form-name" name="name" class="form-input" required placeholder=" ">
@@ -868,9 +897,10 @@
                                 <div class="form-line" id="line-subject"></div>
                             </div>
                             <div class="form-group">
-                                <textarea id="form-message" name="message" class="form-input textarea-input" required placeholder=" "></textarea>
+                                <textarea id="form-message" name="message" class="form-input textarea-input" required placeholder=" " maxlength="1000"></textarea>
                                 <label for="form-message" class="form-label">Message</label>
                                 <div class="form-line" id="line-message"></div>
+                                <span class="char-counter" id="message-char-counter">0 / 1000</span>
                             </div>
                             <button type="submit" class="btn btn-submit" id="btn-submit-form">
                                 <span>Send Message</span>
@@ -940,6 +970,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Custom Toast Container -->
+    <div class="toast-notification-container" id="toast-container"></div>
 
     <!-- Custom JavaScript -->
     <script src="script.js"></script>
