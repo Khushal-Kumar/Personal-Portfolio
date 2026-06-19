@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator with History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="main-container">
+        <div class="history-panel">
+            <div class="history-header">
+                <h3>History</h3>
+                <button id="clearHistoryBtn">Clear</button>
+            </div>
+            <div id="historyList" class="history-list">
+                <p class="empty-msg">No history yet</p>
+            </div>
+        </div>
+
+        <div class="calculator">
+            <input type="text" id="inputBox" placeholder="0" readonly/> 
+
+            <div class="buttons">
+                <button class="button action-btn">AC</button>
+                <button class="button action-btn">DEL</button>
+                <button class="button operator">%</button>
+                <button class="button operator">/</button>
+
+                <button class="button">7</button>
+                <button class="button">8</button>
+                <button class="button">9</button>
+                <button class="button operator">*</button>
+
+                <button class="button">4</button>
+                <button class="button">5</button>
+                <button class="button">6</button>
+                <button class="button operator">-</button>
+
+                <button class="button">1</button>
+                <button class="button">2</button>
+                <button class="button">3</button>
+                <button class="button operator">+</button>
+
+                <button class="button">00</button>
+                <button class="button">0</button>
+                <button class="button">.</button>
+                <button class="button equalBtn">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

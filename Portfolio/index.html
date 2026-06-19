@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khushal Kumar | Portfolio & CV - Data Science Intern & Python Developer</title>
+    <meta name="description" content="Personal portfolio and digital CV of Khushal Kumar. Data Science Intern, Python Developer, and Web Developer. Showcase of projects, certifications, work experience, and achievements.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="main-header" id="main-header">
+        <div class="header-container">
+            <a href="#landing" class="logo" id="logo-link">
+                <span class="logo-circle">KK</span>
+            </a>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#about" class="nav-link" id="link-about">About</a></li>
+                    <li><a href="#experience" class="nav-link" id="link-experience">Experience</a></li>
+                    <li><a href="#education" class="nav-link" id="link-education">Education</a></li>
+                    <li><a href="#projects" class="nav-link" id="link-projects">Projects</a></li>
+                    <li><a href="#skills" class="nav-link" id="link-skills">Skills</a></li>
+                    <li><a href="#certifications" class="nav-link" id="link-certifications">Certifications</a></li>
+                    <li><a href="#achievements" class="nav-link" id="link-achievements">Achievements</a></li>
+                    <li><a href="#contact" class="nav-link" id="link-contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- PAGE 1: LANDING -->
+        <section id="landing" class="section landing-section">
+            <div class="landing-background">
+                <div class="gradient-sphere"></div>
+            </div>
+            <div class="container landing-container">
+                <div class="landing-content">
+                    <h1 class="landing-title" id="landing-title">Khushal Kumar</h1>
+                    <div class="landing-designation-wrapper" id="landing-designation-wrapper">
+                        <span class="designation-tag">Data Science Intern</span>
+                        <span class="designation-dot"></span>
+                        <span class="designation-tag">Python Developer</span>
+                        <span class="designation-dot"></span>
+                        <span class="designation-tag">Web Developer</span>
+                    </div>
+                    <p class="landing-intro" id="landing-intro">
+                        I am a data-focused Computer Science student with a strong passion for transforming raw data into actionable insights and building functional software. Having served as a Google Gemini Student Ambassador, I have developed expertise in AI, prompt engineering, and structured problem-solving. My technical toolkit includes hands-on experience in Python development, exploratory data analysis, and modern web technologies. I thrive on translating complex analytical concepts into practical, user-centric applications. Let's collaborate to build impactful data and web solutions that drive real value.
+                    </p>
+                    <div class="landing-cta" id="landing-cta">
+                        <a href="#about" class="btn btn-primary" id="btn-learn-more">Learn More About Me <i class="fa-solid fa-arrow-down"></i></a>
+                        <div class="dropdown" id="landing-cv-resume-dropdown">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" id="btn-download-menu" aria-haspopup="true" aria-expanded="false">
+                                Download CV / Resume <i class="fa-solid fa-chevron-down"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="btn-download-menu">
+                                <a href="resume.pdf" download="Khushal_Kumar_Resume.pdf" class="dropdown-item"><i class="fa-solid fa-file-pdf"></i> Download Resume</a>
+                                <a href="CV.pdf" download="Khushal_Kumar_CV.pdf" class="dropdown-item"><i class="fa-solid fa-file-invoice"></i> Download CV</a>
+                            </div>
+                        </div>
+                        <a href="#contact" class="btn btn-secondary" id="btn-get-in-touch">Get In Touch <i class="fa-solid fa-paper-plane"></i></a>
+                    </div>
+                    <div class="landing-socials" id="landing-socials">
+                        <a href="https://github.com/Khushal-Kumar" target="_blank" rel="noopener" class="social-icon" id="social-github" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://linkedin.com/in/khush4lkum4r" target="_blank" rel="noopener" class="social-icon" id="social-linkedin" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="mailto:khushalkumarsk@gmail.com" class="social-icon" id="social-email" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: ABOUT ME -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    <div class="about-image-wrapper">
+                        <div class="about-image-container">
+                            <img src="Profile_Photo.jpg" alt="Khushal Kumar" class="about-profile-img" id="about-profile-img">
+                            <div class="about-image-backdrop"></div>
+                        </div>
+                        <div class="about-work-navigation" id="about-work-navigation">
+                            <p class="nav-buttons-label">Explore My Work:</p>
+                            <div class="work-nav-buttons">
+                                <a href="#experience" class="work-nav-btn" id="nav-btn-experience">Work Experience <i class="fa-solid fa-chevron-right"></i></a>
+                                <a href="#education" class="work-nav-btn" id="nav-btn-education">Education <i class="fa-solid fa-chevron-right"></i></a>
+                                <a href="#projects" class="work-nav-btn" id="nav-btn-projects">Projects <i class="fa-solid fa-chevron-right"></i></a>
+                                <a href="#skills" class="work-nav-btn" id="nav-btn-skills">Skills <i class="fa-solid fa-chevron-right"></i></a>
+                                <a href="#certifications" class="work-nav-btn" id="nav-btn-certifications">Certifications <i class="fa-solid fa-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-content">
+                        <p class="about-text" id="about-text">
+                            I am currently in my third year of pursuing a B.Tech in Computer Science and Engineering at the Central University of Haryana. My expertise spans Python development, web application design, and exploratory data analysis, backed by the successful completion of eight independent projects. Throughout my academic and professional journey, including my role as a Google Gemini Student Ambassador and a Python Developer Intern at InternPe, I have honed my ability to build clean, functional code. I regularly leverage tools like VS Code, Git, and SQL, along with Python libraries such as Pandas and NumPy, to solve analytical challenges. What sets me apart is my logical reasoning, structured state management, and commitment to data accuracy in every project I undertake. I am actively seeking a data science or software development internship where I can apply my skills to real-world challenges.
+                        </p>
+                        
+                        <div class="about-cta">
+                            <div class="dropdown" id="about-cv-resume-dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" id="btn-download-menu-about" aria-haspopup="true" aria-expanded="false">
+                                    Download CV / Resume <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="btn-download-menu-about">
+                                    <a href="resume.pdf" download="Khushal_Kumar_Resume.pdf" class="dropdown-item"><i class="fa-solid fa-file-pdf"></i> Download Resume</a>
+                                    <a href="CV.pdf" download="Khushal_Kumar_CV.pdf" class="dropdown-item"><i class="fa-solid fa-file-invoice"></i> Download CV</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mission-vision-cards">
+                            <div class="mv-card flip-card" id="mission-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="mv-icon-wrapper">
+                                            <i class="fa-solid fa-bullseye"></i>
+                                        </div>
+                                        <h3>Our Mission</h3>
+                                        <p class="hover-tip">Hover to read details</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h3>My Mission</h3>
+                                        <p>To bridge the gap between complex data analysis and intuitive software solutions by delivering high-quality, structured, and user-centric applications.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mv-card flip-card" id="vision-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <div class="mv-icon-wrapper">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </div>
+                                        <h3>Our Vision</h3>
+                                        <p class="hover-tip">Hover to read details</p>
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h3>My Vision</h3>
+                                        <p>To become a leading Data Scientist and Software Engineer who leverages AI and analytics to solve complex, global problems and empower communities through technology education.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3: WORK EXPERIENCE -->
+        <section id="experience" class="section experience-section">
+            <div class="container">
+                <h2 class="section-title">Work Experience</h2>
+                <div class="experience-timeline">
+                    <!-- Google Card -->
+                    <div class="experience-card card-left reveal" id="exp-google">
+                        <div class="exp-card-inner">
+                            <div class="exp-left-panel">
+                                <div class="exp-icon"><i class="fa-brands fa-google"></i></div>
+                                <span class="exp-duration">Aug 2025 – Dec 2025</span>
+                            </div>
+                            <div class="exp-right-panel">
+                                <div class="exp-header">
+                                    <h3 class="exp-role">Gemini Student Ambassador</h3>
+                                    <div class="exp-meta">
+                                        <span class="exp-company">Google (Student Ambassador Program)</span>
+                                        <span class="badge badge-campus">On-Campus</span>
+                                    </div>
+                                    <span class="exp-location"><i class="fa-solid fa-location-dot"></i> Haryana, India</span>
+                                </div>
+                                <div class="exp-body">
+                                    <h4 class="exp-subtitle">Key Responsibilities</h4>
+                                    <ul class="exp-bullets">
+                                        <li>Represented Google's AI tools and Gemini models on campus, building data and AI literacy among peers through structured workshops and community building.</li>
+                                        <li>Drove AI literacy for 100+ students by designing and delivering 3 structured workshops on Generative AI, Gemini model capabilities, and prompt engineering.</li>
+                                        <li>Built and sustained an 80-member campus tech community through consistent session documentation, structured reporting, and knowledge-sharing workflows.</li>
+                                        <li>Curated hands-on demonstration sessions on data-driven decision-making, strengthening analytical reasoning across a cross-functional student cohort.</li>
+                                    </ul>
+                                    <h4 class="exp-subtitle">Key Achievements</h4>
+                                    <ul class="exp-achievements">
+                                        <li><i class="fa-solid fa-trophy"></i> Drove AI literacy for <strong>100+ students</strong> by designing 3 workshops on GenAI and Gemini, turning theory into interactive learning.</li>
+                                        <li><i class="fa-solid fa-chart-line"></i> Sustained an <strong>80-member</strong> tech community with structured workflows, improving engagement metrics.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- InternPe Card -->
+                    <div class="experience-card card-right reveal" id="exp-internpe">
+                        <div class="exp-card-inner">
+                            <div class="exp-left-panel">
+                                <div class="exp-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                                <span class="exp-duration">Jul 2025 – Aug 2025</span>
+                            </div>
+                            <div class="exp-right-panel">
+                                <div class="exp-header">
+                                    <h3 class="exp-role">Python Developer Intern</h3>
+                                    <div class="exp-meta">
+                                        <span class="exp-company">InternPe</span>
+                                        <span class="badge badge-remote">Remote · Full-Time</span>
+                                    </div>
+                                    <span class="exp-location"><i class="fa-solid fa-location-dot"></i> Remote</span>
+                                </div>
+                                <div class="exp-body">
+                                    <h4 class="exp-subtitle">Key Responsibilities</h4>
+                                    <ul class="exp-bullets">
+                                        <li>Completed a structured 6-week internship focused on object-oriented programming (OOP) principles and Python application architectures.</li>
+                                        <li>Delivered 4 complete Python projects in 6 weeks, independently managing scope, structuring data flows, and validating all outputs.</li>
+                                        <li>Built real-time GUI applications using Tkinter, applying event-driven programming and live data displays.</li>
+                                        <li>Engineered logical engines for game projects using 2D list-based board state representation and win/tie detection algorithms.</li>
+                                    </ul>
+                                    <h4 class="exp-subtitle">Key Achievements</h4>
+                                    <ul class="exp-achievements">
+                                        <li><i class="fa-solid fa-trophy"></i> Successfully delivered <strong>4 end-to-end Python projects</strong> in 6 weeks, demonstrating strong self-management and rapid coding cycles.</li>
+                                        <li><i class="fa-solid fa-shield-halved"></i> Reduced logical errors to <strong>zero</strong> in decision engines by implementing comprehensive state-validation layers.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: EDUCATION -->
+        <section id="education" class="section education-section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="education-grid">
+                    <!-- B.Tech Card -->
+                    <div class="education-card card-drop reveal" id="edu-btech">
+                        <svg class="card-border-svg" width="100%" height="100%">
+                            <rect class="border-rect" x="0" y="0" width="100%" height="100%" rx="16" fill="none" />
+                        </svg>
+                        <div class="edu-card-content">
+                            <div class="edu-icon-header">
+                                <div class="edu-icon-circle"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <span class="edu-mode">Full-time</span>
+                            </div>
+                            <span class="edu-duration">2023 – Present (Expected 2027)</span>
+                            <h3 class="edu-qualification">B.Tech — Computer Science & Engineering</h3>
+                            <h4 class="edu-institution">Central University of Haryana</h4>
+                            <span class="edu-location"><i class="fa-solid fa-location-dot"></i> Haryana, India</span>
+                            <div class="edu-highlights">
+                                <h5>Key Highlights</h5>
+                                <ul>
+                                    <li><span class="bullet-highlight">Core Focus:</span> Currently in 3rd Year with specialized focus on core CS subjects and applied programming labs.</li>
+                                    <li><span class="bullet-highlight">Key Coursework:</span> Deep study of Data Structures, Algorithms, DBMS, Operating Systems, Computer Networks, and OOP.</li>
+                                    <li><span class="bullet-highlight">Applied Labs:</span> Coursework applied in projects covering data structures organization, SQL query optimization, and system design.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Class 12 Card -->
+                    <div class="education-card card-rise reveal" id="edu-twelfth">
+                        <svg class="card-border-svg" width="100%" height="100%">
+                            <rect class="border-rect" x="0" y="0" width="100%" height="100%" rx="16" fill="none" />
+                        </svg>
+                        <div class="edu-card-content">
+                            <div class="edu-icon-header">
+                                <div class="edu-icon-circle"><i class="fa-solid fa-school"></i></div>
+                                <span class="edu-mode">Full-time</span>
+                            </div>
+                            <span class="edu-duration">2022 – 2023</span>
+                            <h3 class="edu-qualification">Class 12th (ISC Board) — Science Stream</h3>
+                            <h4 class="edu-institution">Sacred Heart Convent Higher Secondary School</h4>
+                            <span class="edu-location"><i class="fa-solid fa-location-dot"></i> Uttar Pradesh, India</span>
+                            <div class="edu-highlights">
+                                <h5>Key Highlights</h5>
+                                <ul>
+                                    <li><span class="bullet-highlight">Specialisations:</span> Core focus on Mathematics, Physics, Chemistry, and Computer Science.</li>
+                                    <li><span class="bullet-highlight">Foundational CS:</span> Developed strong computational fundamentals and initial logical programming skills.</li>
+                                    <li><span class="bullet-highlight">Logical Reasoning:</span> Trained in structured problem solving and analytical thinking through mathematics and science coursework.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 5: PROJECTS -->
+        <section id="projects" class="section projects-section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                
+                <!-- Category Filter -->
+                <div class="projects-filter" id="projects-filter">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="python">Python / AI</button>
+                    <button class="filter-btn" data-filter="web">Web Development</button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="projects-grid" id="projects-grid">
+                    <!-- Project 1: AI Resume Analyser -->
+                    <div class="project-card reveal" data-category="python" id="proj-resume-analyser">
+                        <div class="project-card-inner">
+                            <div class="project-left-panel">
+                                <div class="project-img-placeholder">
+                                    <i class="fa-solid fa-brain"></i>
+                                    <span>AI Application</span>
+                                </div>
+                                <span class="project-duration">2025</span>
+                            </div>
+                            <div class="project-right-panel">
+                                <div class="project-header">
+                                    <h3 class="project-title">AI Resume Analyser</h3>
+                                    <span class="project-type-tag">Python & AI</span>
+                                </div>
+                                <p class="project-desc">A Python-based resume analysis application that parses CVs, maps text semantic gaps against job descriptions using Google Gemini, and delivers matching metrics.</p>
+                                <div class="project-outcomes">
+                                    <h4>Key Outcomes</h4>
+                                    <ul>
+                                        <li><span class="outcome-num">1</span> Interactive UI for PDF resumes & job description inputs.</li>
+                                        <li><span class="outcome-num">2</span> Gemini API integration for semantic gaps analysis with <strong>95% accuracy</strong>.</li>
+                                        <li><span class="outcome-num">3</span> Actionable feedback recommendations that cut hiring parsing time by <strong>80%</strong>.</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-pill">Python</span>
+                                    <span class="tech-pill">Gemini API</span>
+                                    <span class="tech-pill">Streamlit</span>
+                                    <span class="tech-pill">PyPDF2</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="Projects/AI Resume Analyser/index.html" target="_blank" class="btn btn-project btn-primary" id="demo-resume-analyser">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                    <a href="https://github.com/Khushal-Kumar/Resume-Analyser" target="_blank" class="btn btn-project btn-secondary" id="repo-resume-analyser">View Repo <i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Classic Snake Game Web -->
+                    <div class="project-card reveal" data-category="web" id="proj-snake-web">
+                        <div class="project-card-inner">
+                            <div class="project-left-panel">
+                                <div class="project-img-placeholder">
+                                    <i class="fa-solid fa-gamepad"></i>
+                                    <span>Web Game</span>
+                                </div>
+                                <span class="project-duration">2025</span>
+                            </div>
+                            <div class="project-right-panel">
+                                <div class="project-header">
+                                    <h3 class="project-title">Classic Snake Game — Web Version</h3>
+                                    <span class="project-type-tag">Web Development</span>
+                                </div>
+                                <p class="project-desc">A clean, browser-based recreation of the traditional Snake Game using the HTML5 Canvas API for high-performance rendering and collision math.</p>
+                                <div class="project-outcomes">
+                                    <h4>Key Outcomes</h4>
+                                    <ul>
+                                        <li><span class="outcome-num">1</span> Fluid animations rendered at a consistent <strong>60 FPS</strong> rate.</li>
+                                        <li><span class="outcome-num">2</span> Built-in local storage system tracking scores and high-scores across restarts.</li>
+                                        <li><span class="outcome-num">3</span> Grid-boundary and self-intersection math executing with <strong>100% precision</strong>.</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-pill">HTML5 Canvas</span>
+                                    <span class="tech-pill">CSS3</span>
+                                    <span class="tech-pill">JavaScript</span>
+                                    <span class="tech-pill">DOM API</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="Projects/Snake Game/index.html" target="_blank" class="btn btn-project btn-primary" id="demo-snake-web">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                    <a href="https://github.com/Khushal-Kumar/Snake-Game" target="_blank" class="btn btn-project btn-secondary" id="repo-snake-web">View Repo <i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: 3x3 Sliding Puzzle Game -->
+                    <div class="project-card reveal" data-category="web" id="proj-puzzle-game">
+                        <div class="project-card-inner">
+                            <div class="project-left-panel">
+                                <div class="project-img-placeholder">
+                                    <i class="fa-solid fa-puzzle-piece"></i>
+                                    <span>Web App</span>
+                                </div>
+                                <span class="project-duration">2025</span>
+                            </div>
+                            <div class="project-right-panel">
+                                <div class="project-header">
+                                    <h3 class="project-title">3x3 Sliding Puzzle Game</h3>
+                                    <span class="project-type-tag">Web Development</span>
+                                </div>
+                                <p class="project-desc">Interactive sliding puzzle game utilizing matrix inversion counts to generate strictly solvable scrambles, with performance tracking and sliding animations.</p>
+                                <div class="project-outcomes">
+                                    <h4>Key Outcomes</h4>
+                                    <ul>
+                                        <li><span class="outcome-num">1</span> Custom board validator guaranteeing <strong>100% solvable states</strong>.</li>
+                                        <li><span class="outcome-num">2</span> Smooth CSS-transition tiles with a sliding duration of <strong>300ms</strong>.</li>
+                                        <li><span class="outcome-num">3</span> Complete move counters and victory conditions evaluated instantly.</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-pill">HTML5</span>
+                                    <span class="tech-pill">CSS3</span>
+                                    <span class="tech-pill">JavaScript</span>
+                                    <span class="tech-pill">Matrix Math</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="Projects/3x3 Puzzle Game/index.html" target="_blank" class="btn btn-project btn-primary" id="demo-puzzle">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                    <a href="https://github.com/Khushal-Kumar/Puzzle-Game" target="_blank" class="btn btn-project btn-secondary" id="repo-puzzle">View Repo <i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Python Snake Game Desktop -->
+                    <div class="project-card reveal" data-category="python" id="proj-snake-desktop">
+                        <div class="project-card-inner">
+                            <div class="project-left-panel">
+                                <div class="project-img-placeholder">
+                                    <i class="fa-brands fa-python"></i>
+                                    <span>Desktop GUI</span>
+                                </div>
+                                <span class="project-duration">2025</span>
+                            </div>
+                            <div class="project-right-panel">
+                                <div class="project-header">
+                                    <h3 class="project-title">Snake Game (Python Desktop)</h3>
+                                    <span class="project-type-tag">Python & OOP</span>
+                                </div>
+                                <p class="project-desc">A desktop GUI Snake Game built using Tkinter, featuring event-driven animations, apple spawning algorithms, and persistent high scores.</p>
+                                <div class="project-outcomes">
+                                    <h4>Key Outcomes</h4>
+                                    <ul>
+                                        <li><span class="outcome-num">1</span> Structured clean code applying strict Object-Oriented Design patterns.</li>
+                                        <li><span class="outcome-num">2</span> Managed responsive GUI cycles using Tkinter's event-loop scheduling.</li>
+                                        <li><span class="outcome-num">3</span> Local file storage integration for high-score tracking and loading.</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-pill">Python</span>
+                                    <span class="tech-pill">Tkinter GUI</span>
+                                    <span class="tech-pill">OOP Design</span>
+                                    <span class="tech-pill">File I/O</span>
+                                </div>
+                                <div class="project-links">
+                                    <span class="btn btn-project btn-disabled" title="Desktop Python App">Desktop App</span>
+                                    <a href="https://github.com/khush4lkum4r/Snake-Game" target="_blank" class="btn btn-project btn-secondary" id="repo-snake-python">View Repo <i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5: Basic Calculator Web App -->
+                    <div class="project-card reveal" data-category="web" id="proj-calculator">
+                        <div class="project-card-inner">
+                            <div class="project-left-panel">
+                                <div class="project-img-placeholder">
+                                    <i class="fa-solid fa-calculator"></i>
+                                    <span>Web App</span>
+                                </div>
+                                <span class="project-duration">2025</span>
+                            </div>
+                            <div class="project-right-panel">
+                                <div class="project-header">
+                                    <h3 class="project-title">Basic Calculator Web App</h3>
+                                    <span class="project-type-tag">Web Development</span>
+                                </div>
+                                <p class="project-desc">A responsive browser-based calculator supporting full mathematical parser flows, keyboard shortcut listeners, and a modern glassmorphic interface.</p>
+                                <div class="project-outcomes">
+                                    <h4>Key Outcomes</h4>
+                                    <ul>
+                                        <li><span class="outcome-num">1</span> Zero-error evaluation on mathematical operator precedence string expressions.</li>
+                                        <li><span class="outcome-num">2</span> Pixel-perfect responsive layout adapting from <strong>320px to 4K</strong>.</li>
+                                        <li><span class="outcome-num">3</span> Complete physical keyboard bindings support for efficient input.</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-pill">HTML5</span>
+                                    <span class="tech-pill">CSS3 (Glassmorphism)</span>
+                                    <span class="tech-pill">JavaScript</span>
+                                    <span class="tech-pill">Event Listeners</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="Projects/Calculator/index.html" target="_blank" class="btn btn-project btn-primary" id="demo-calculator">Live Demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                                    <a href="https://github.com/Khushal-Kumar/Calculator" target="_blank" class="btn btn-project btn-secondary" id="repo-calculator">View Repo <i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6: Connect Four -->
+                    <div class="project-card reveal" data-category="python" id="proj-connectfour">
+                        <div class="project-card-inner">
+                            <div class="project-left-panel">
+                                <div class="project-img-placeholder">
+                                    <i class="fa-solid fa-grid-3"></i>
+                                    <span>CLI Engine</span>
+                                </div>
+                                <span class="project-duration">2025</span>
+                            </div>
+                            <div class="project-right-panel">
+                                <div class="project-header">
+                                    <h3 class="project-title">Connect Four — Player vs CPU</h3>
+                                    <span class="project-type-tag">Python CLI</span>
+                                </div>
+                                <p class="project-desc">A command-line terminal version of Connect Four with random CPU decision logic, board coordinate validations, and multidirectional search win checks.</p>
+                                <div class="project-outcomes">
+                                    <h4>Key Outcomes</h4>
+                                    <ul>
+                                        <li><span class="outcome-num">1</span> 2D grid matrix algorithms detecting wins in vertical, horizontal, and diagonals.</li>
+                                        <li><span class="outcome-num">2</span> Validated CPU move validation preventing illegal placements in filled columns.</li>
+                                        <li><span class="outcome-num">3</span> Clean terminal rendering showing updated board columns synchronously.</li>
+                                    </ul>
+                                </div>
+                                <div class="project-tech">
+                                    <span class="tech-pill">Python</span>
+                                    <span class="tech-pill">Random Module</span>
+                                    <span class="tech-pill">2D Grid Logic</span>
+                                    <span class="tech-pill">CLI Formatting</span>
+                                </div>
+                                <div class="project-links">
+                                    <span class="btn btn-project btn-disabled" title="Terminal Command-Line Game">CLI Game</span>
+                                    <a href="https://github.com/khush4lkum4r/Connect-Four" target="_blank" class="btn btn-project btn-secondary" id="repo-connectfour">View Repo <i class="fa-brands fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 6: SKILLS -->
+        <section id="skills" class="section skills-section">
+            <div class="container">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="skills-grid" id="skills-grid">
+                    <!-- Category 1: Languages -->
+                    <div class="skills-card reveal" id="skill-cat-languages">
+                        <div class="skills-card-header">
+                            <div class="skills-icon"><i class="fa-solid fa-code"></i></div>
+                            <h3>Programming Languages</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Python (OOP, Logic)</span>
+                                    <span class="skill-pct" data-target="92">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">SQL / MySQL</span>
+                                    <span class="skill-pct" data-target="88">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">JavaScript</span>
+                                    <span class="skill-pct" data-target="85">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">C / C++</span>
+                                    <span class="skill-pct" data-target="80">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Data & Analytics -->
+                    <div class="skills-card reveal" id="skill-cat-data">
+                        <div class="skills-card-header">
+                            <div class="skills-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                            <h3>Data & Analytics</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">EDA Fundamentals</span>
+                                    <span class="skill-pct" data-target="90">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Data Visualisation</span>
+                                    <span class="skill-pct" data-target="88">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Pandas & NumPy</span>
+                                    <span class="skill-pct" data-target="85">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Matplotlib & Excel</span>
+                                    <span class="skill-pct" data-target="80">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Web Dev -->
+                    <div class="skills-card reveal" id="skill-cat-web">
+                        <div class="skills-card-header">
+                            <div class="skills-icon"><i class="fa-solid fa-globe"></i></div>
+                            <h3>Web Development</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Responsive Design</span>
+                                    <span class="skill-pct" data-target="92">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5 & CSS3</span>
+                                    <span class="skill-pct" data-target="90">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">DOM Manipulation</span>
+                                    <span class="skill-pct" data-target="88">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">HTML5 Canvas API</span>
+                                    <span class="skill-pct" data-target="85">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category 4: Tools & Core CS -->
+                    <div class="skills-card reveal" id="skill-cat-tools">
+                        <div class="skills-card-header">
+                            <div class="skills-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                            <h3>Tools & Core CS</h3>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">VS Code IDE</span>
+                                    <span class="skill-pct" data-target="95">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Git & GitHub</span>
+                                    <span class="skill-pct" data-target="88">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Data Structures & Algos</span>
+                                    <span class="skill-pct" data-target="85">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name">Database Systems (DBMS)</span>
+                                    <span class="skill-pct" data-target="82">0%</span>
+                                </div>
+                                <div class="skill-bar"><div class="skill-fill" style="width: 0%;"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 7: CERTIFICATIONS -->
+        <section id="certifications" class="section certifications-section">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certifications-grid" id="certifications-grid">
+                    <!-- Google Certificate -->
+                    <div class="cert-card reveal" id="cert-google">
+                        <div class="cert-image-container">
+                            <img src="certificates/GoogleGemini.jpg" alt="Google Gemini Student Ambassador Certificate" class="cert-img">
+                        </div>
+                        <div class="cert-content">
+                            <div class="cert-header">
+                                <span class="cert-provider-badge">Google</span>
+                                <span class="cert-year">2025</span>
+                            </div>
+                            <h3 class="cert-title">Google Gemini Student Ambassador Certificate</h3>
+                            <p class="cert-desc">Covered generative AI concepts, Google Gemini models, prompt engineering structures, ethical AI considerations, and developer integrations.</p>
+                        </div>
+                    </div>
+
+                    <!-- FCC Certificate -->
+                    <div class="cert-card reveal" id="cert-fcc">
+                        <div class="cert-image-container">
+                            <img src="certificates/FreeCodeCamp.jpg" alt="Web Development Certification" class="cert-img">
+                        </div>
+                        <div class="cert-content">
+                            <div class="cert-header">
+                                <span class="cert-provider-badge">freeCodeCamp</span>
+                                <span class="cert-year">2025</span>
+                            </div>
+                            <h3 class="cert-title">Web Development Certification</h3>
+                            <p class="cert-desc">Extensive hands-on curriculum representing HTML5, CSS3, JavaScript scripting, responsive web layout layouts, and browser UI applications.</p>
+                        </div>
+                    </div>
+
+                    <!-- Udemy Certificate -->
+                    <div class="cert-card reveal" id="cert-udemy">
+                        <div class="cert-image-container">
+                            <img src="certificates/Udemy.jpg" alt="Python Programming Certificate" class="cert-img">
+                        </div>
+                        <div class="cert-content">
+                            <div class="cert-header">
+                                <span class="cert-provider-badge">Udemy</span>
+                                <span class="cert-year">2025</span>
+                            </div>
+                            <h3 class="cert-title">Python Programming — Code With Harry</h3>
+                            <p class="cert-desc">Intensive program covering core Python syntax, OOP design principles, Tkinter GUI library desktop interfaces, and algorithmic problem-solving tasks.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 8: ACHIEVEMENTS -->
+        <section id="achievements" class="section achievements-section">
+            <div class="container">
+                <h2 class="section-title">Achievements & Recognition</h2>
+                <p class="section-subtitle">A summary of key milestones, leadership roles, and technical achievements throughout my academic and professional career.</p>
+                
+                <!-- Stat Counters -->
+                <div class="stat-counters" id="stat-counters">
+                    <div class="stat-box" id="stat-experience">
+                        <div class="stat-num-wrapper">
+                            <span class="stat-num" data-val="1">0</span><span class="stat-plus">+</span>
+                        </div>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-box" id="stat-certifications">
+                        <div class="stat-num-wrapper">
+                            <span class="stat-num" data-val="3">0</span><span class="stat-plus">+</span>
+                        </div>
+                        <span class="stat-label">Certifications</span>
+                    </div>
+                    <div class="stat-box" id="stat-projects">
+                        <div class="stat-num-wrapper">
+                            <span class="stat-num" data-val="8">0</span>
+                        </div>
+                        <span class="stat-label">Projects Built</span>
+                    </div>
+                    <div class="stat-box" id="stat-awards">
+                        <div class="stat-num-wrapper">
+                            <span class="stat-num" data-val="4">0</span>
+                        </div>
+                        <span class="stat-label">Key Milestones</span>
+                    </div>
+                </div>
+
+                <!-- Achievements Grid -->
+                <div class="achievements-grid" id="achievements-grid">
+                    <!-- Achievement 1 -->
+                    <div class="achievement-card reveal" id="ach-gemini">
+                        <div class="ach-badge-pill">
+                            <i class="fa-solid fa-trophy"></i>
+                            <span>Leadership</span>
+                        </div>
+                        <div class="ach-image-container">
+                            <img src="certificates/GoogleGemini.jpg" alt="Google Student Ambassador" class="ach-img">
+                        </div>
+                        <div class="ach-content">
+                            <div class="ach-meta">
+                                <span class="ach-year">2025</span>
+                                <span class="ach-org">Google</span>
+                            </div>
+                            <h3 class="ach-title">Google Gemini Student Ambassador</h3>
+                            <p class="ach-desc">Selected from the university cohort to represent Google's AI capabilities, designing and executing prompt-engineering workshops for 100+ students.</p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 2 -->
+                    <div class="achievement-card reveal" id="ach-internpe">
+                        <div class="ach-badge-pill">
+                            <i class="fa-solid fa-certificate"></i>
+                            <span>Professional</span>
+                        </div>
+                        <div class="ach-image-container">
+                            <img src="certificates/InternPe.png" alt="Python Internship Complete" class="ach-img">
+                        </div>
+                        <div class="ach-content">
+                            <div class="ach-meta">
+                                <span class="ach-year">2025</span>
+                                <span class="ach-org">InternPe</span>
+                            </div>
+                            <h3 class="ach-title">Python Developer Internship</h3>
+                            <p class="ach-desc">Completed a rigorous internship delivering 4 production-ready Python GUI application releases within 6 weeks, validated with 0% logic errors.</p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 3 -->
+                    <div class="achievement-card reveal" id="ach-projects">
+                        <div class="ach-badge-pill">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <span>Technical</span>
+                        </div>
+                        <div class="ach-image-container">
+                            <img src="achievements/independent_projects.png" alt="8 Projects Built" class="ach-img">
+                        </div>
+                        <div class="ach-content">
+                            <div class="ach-meta">
+                                <span class="ach-year">2025</span>
+                                <span class="ach-org">Self-Directed</span>
+                            </div>
+                            <h3 class="ach-title">8 Independent Projects Completed</h3>
+                            <p class="ach-desc">Successfully engineered 4 Python desktop GUI programs (Tkinter/OOP) and 4 Web apps (HTML/CSS/JS Canvas) demonstrating parallel technical capability.</p>
+                        </div>
+                    </div>
+
+                    <!-- Achievement 4 -->
+                    <div class="achievement-card reveal" id="ach-certs">
+                        <div class="ach-badge-pill">
+                            <i class="fa-solid fa-award"></i>
+                            <span>Academic</span>
+                        </div>
+                        <div class="ach-image-container">
+                            <img src="achievements/certifications_completion.png" alt="3 Certifications Completed" class="ach-img">
+                        </div>
+                        <div class="ach-content">
+                            <div class="ach-meta">
+                                <span class="ach-year">2025</span>
+                                <span class="ach-org">Google / freeCodeCamp / Udemy</span>
+                            </div>
+                            <h3 class="ach-title">3 Professional Certifications Completed</h3>
+                            <p class="ach-desc">Acquired formal certifications in Web Development, Python OOP, and Generative AI prompt architectures alongside full-time Computer Science studies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 9: CONTACT -->
+        <section id="contact" class="section contact-section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch — Let's Create Something Amazing</h2>
+                <div class="contact-grid">
+                    <!-- Left: Form -->
+                    <div class="contact-form-card reveal" id="contact-form-card">
+                        <form id="portfolio-contact-form" class="contact-form" action="#" method="POST">
+                            <div class="form-group">
+                                <input type="text" id="form-name" name="name" class="form-input" required placeholder=" ">
+                                <label for="form-name" class="form-label">Full Name</label>
+                                <div class="form-line" id="line-name"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="form-email" name="email" class="form-input" required placeholder=" ">
+                                <label for="form-email" class="form-label">Email Address</label>
+                                <div class="form-line" id="line-email"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="form-subject" name="subject" class="form-input" required placeholder=" ">
+                                <label for="form-subject" class="form-label">Subject</label>
+                                <div class="form-line" id="line-subject"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="form-message" name="message" class="form-input textarea-input" required placeholder=" "></textarea>
+                                <label for="form-message" class="form-label">Message</label>
+                                <div class="form-line" id="line-message"></div>
+                            </div>
+                            <button type="submit" class="btn btn-submit" id="btn-submit-form">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </form>
+                        <div id="form-feedback-message" class="form-feedback"></div>
+                    </div>
+
+                    <!-- Right: Info Panel -->
+                    <div class="contact-info-panel reveal" id="contact-info-panel">
+                        <div class="info-header">
+                            <h3>Let's Connect</h3>
+                            <p>Have a question or want to work together? Feel free to reach out using the details below or send a message directly.</p>
+                        </div>
+                        <div class="info-rows">
+                            <div class="info-row" id="info-row-email">
+                                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                                <div class="info-details">
+                                    <span class="info-label">Email</span>
+                                    <a href="mailto:khushalkumarsk@gmail.com" class="info-value">khushalkumarsk@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="info-row" id="info-row-phone">
+                                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                                <div class="info-details">
+                                    <span class="info-label">Phone</span>
+                                    <a href="tel:+917409138501" class="info-value">+91 740913 8501</a>
+                                </div>
+                            </div>
+                            <div class="info-row" id="info-row-location">
+                                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="info-details">
+                                    <span class="info-label">Location</span>
+                                    <span class="info-value">Uttar Pradesh, India</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-social-links">
+                            <h4>Find Me On</h4>
+                            <div class="social-pills">
+                                <a href="https://linkedin.com/in/khush4lkum4r" target="_blank" rel="noopener" class="social-pill" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+                                <a href="https://github.com/khush4lkum4r" target="_blank" rel="noopener" class="social-pill" aria-label="GitHub"><i class="fa-brands fa-github"></i> GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <span class="footer-logo">KK</span>
+                <h3>Khushal Kumar</h3>
+                <p class="footer-tagline">Data Science Intern · Python Developer · Web Developer | Building intelligent solutions and user-centric web applications.</p>
+            </div>
+            <div class="footer-socials">
+                <a href="https://github.com/khush4lkum4r" target="_blank" rel="noopener" class="footer-social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/khush4lkum4r" target="_blank" rel="noopener" class="footer-social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:khushalkumarsk@gmail.com" class="footer-social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <div class="footer-copy">
+                <p>&copy; 2026 Khushal Kumar. All rights reserved. Created with Antigravity.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
